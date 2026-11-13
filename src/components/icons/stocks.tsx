@@ -8,10 +8,10 @@ export function StocksIcons(props: React.SVGProps<SVGSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_341_416)">
+      <g clipPath="url(#clip0_341_416)">
         <path
           d="M1.97707 8.65485C1.57653 8.90156 1.3311 9.34514 1.33008 9.82419L1.33008 12.0398C1.3311 12.5188 1.57653 12.9624 1.97707 13.2091L3.97807 14.44C4.40086 14.7004 4.9293 14.7004 5.35209 14.44L8.00008 12.8125V9.05147L4.66508 7L1.97707 8.65485Z"
-          stroke-width="2"
+          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
           stroke=""
@@ -32,14 +32,14 @@ export function StocksIcons(props: React.SVGProps<SVGSVGElement>) {
         />
         <path
           d="M4.66992 11V14.45"
-          stroke-width="2"
+          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
           stroke=""
         />
         <path
           d="M8 9.05147V12.8125L10.648 14.44C11.0708 14.7004 11.5992 14.7004 12.022 14.44L14.023 13.2091C14.4235 12.9624 14.669 12.5188 14.67 12.0398V9.82419C14.669 9.34514 14.4235 8.90156 14.023 8.65485L11.335 7L8 9.05147Z"
-          stroke-width="2"
+          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
           stroke=""

@@ -41,7 +41,11 @@ export function DashboardWrapper({
         </div>
       </div>
 
-      {isValidElement(children) && children}
+      {isValidElement(children) ? (
+        <div className="flex flex-col gap-5 py-4 px-8">{children}</div>
+      ) : (
+        "Invalid children Element"
+      )}
     </div>
   );
 }

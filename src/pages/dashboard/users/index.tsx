@@ -26,7 +26,7 @@ export default function UsersPage() {
         },
       }}
     >
-      <div className="flex flex-col gap-10 py-4 px-8">
+      <>
         <BaseTable
           columns={TABLE_COLUMNS}
           data={TABLE_DATA}
@@ -57,7 +57,7 @@ export default function UsersPage() {
             </div>
           ))}
         </div>
-      </div>
+      </>
     </DashboardWrapper>
   );
 }

@@ -53,7 +53,7 @@ export function AppSidebar() {
             <SidebarLinks
               icon={AuditIcon}
               label="Audit trial"
-              href="/audit-trail"
+              href="/audit-trial"
             />
 
             <SidebarLinks icon={UsersIcon} label="Users" href="/users" />
