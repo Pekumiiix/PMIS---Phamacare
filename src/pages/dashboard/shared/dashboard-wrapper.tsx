@@ -22,7 +22,8 @@ export function DashboardWrapper({
         <div className="flex items-center gap-2">
           {outlineAction && (
             <Button
-              className="size-fit flex items-center gap-1.5 bg-[#0F1729] rounded-[8px] py-1.75 px-3.5"
+              variant="outline"
+              className="size-fit flex items-center gap-1.5 rounded-[8px] py-1.75 px-3.5 border-[#E3E6EB]"
               onClick={outlineAction.action}
             >
               <outlineAction.icon className="size-4" />

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Download } from "lucide-react";
 
 import {
   BaseTable,
@@ -32,6 +33,11 @@ export default function AuditTrialPage() {
     <DashboardWrapper
       page="Audit Trial"
       description="Every change to stock or sales by staff is recorded here and can’t be edited (SRS-003)"
+      outlineAction={{
+        icon: Download,
+        label: "Export",
+        action: () => console.log("Button clicked"),
+      }}
     >
       <>
         <div className="flex items-center gap-1.5">

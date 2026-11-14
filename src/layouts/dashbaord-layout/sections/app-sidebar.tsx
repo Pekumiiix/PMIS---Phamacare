@@ -33,7 +33,7 @@ export function AppSidebar() {
             <SidebarLinks
               icon={PointOfSaleIcon}
               label="Point of Sale"
-              href="/"
+              href="/point-of-sale"
             />
             <SidebarLinks
               icon={PrescriptionIcon}
