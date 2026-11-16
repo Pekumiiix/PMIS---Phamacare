@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 
 import { DashboardLayout } from "./layouts/dashbaord-layout";
+import SignInPage from "./pages/auth/sign-in";
 import AuditTrialPage from "./pages/dashboard/audit-trial";
 import DailyReportPage from "./pages/dashboard/daily-report";
 import PointOfSalePage from "./pages/dashboard/point-of-sale";
@@ -19,6 +20,8 @@ function App() {
         <Route path="/audit-trial" element={<AuditTrialPage />} />
         <Route path="/users" element={<UsersPage />} />
       </Route>
+
+      <Route path="/sign-in" element={<SignInPage />} />
     </Routes>
   );
 }

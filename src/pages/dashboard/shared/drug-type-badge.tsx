@@ -1,4 +1,4 @@
-import type { IBadgeConfig } from "./drug-item";
+import type { IBadgeConfig } from "../point-of-sale/components/drug-item";
 
 const TYPE_CONFIG: Record<TDrugType, IBadgeConfig> = {
   "over-the-counter": { bg: "#EEF1F5", color: "#5B6474", text: "OTC" },
@@ -19,4 +19,4 @@ export function DrugTypeBadge({ type }: { type: TDrugType }) {
   );
 }
 
-type TDrugType = "prescription-only" | "over-the-counter";
+export type TDrugType = "prescription-only" | "over-the-counter";

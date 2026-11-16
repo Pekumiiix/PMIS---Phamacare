@@ -1,4 +1,5 @@
 import { isValidElement } from "react";
+import { cn } from "cn";
 
 import { Button } from "@/components/ui/button";
 
@@ -8,9 +9,10 @@ export function DashboardWrapper({
   outlineAction,
   defaultAction,
   children,
+  className,
 }: IDashboardWrapper) {
   return (
-    <div className="flex flex-col">
+    <div className="h-full flex flex-col">
       <div className="w-full flex items-end justify-between py-5 px-8 bg-white border-b border-[#E3E6EB]">
         <div className="flex flex-col gap-0.5">
           <h1 className="text-[22px] font-semibold leading-7.75 text-[#101828]">
@@ -43,7 +45,9 @@ export function DashboardWrapper({
       </div>
 
       {isValidElement(children) ? (
-        <div className="flex flex-col gap-5 py-4 px-8">{children}</div>
+        <div className={cn("h-full flex flex-col gap-5 py-4 px-8", className)}>
+          {children}
+        </div>
       ) : (
         "Invalid children Element"
       )}
@@ -65,4 +69,5 @@ interface IDashboardWrapper {
     action: () => void;
   };
   children: React.ReactNode;
+  className?: string;
 }

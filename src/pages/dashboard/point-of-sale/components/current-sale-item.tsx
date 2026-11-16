@@ -2,7 +2,7 @@ import { Minus, Plus } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import { DrugTypeBadge } from "./drug-type-badge";
+import { DrugTypeBadge } from "../../shared/drug-type-badge";
 
 export function CurrentSaleItem() {
   return (
