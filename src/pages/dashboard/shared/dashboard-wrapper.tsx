@@ -34,7 +34,10 @@ export function DashboardWrapper({
           )}
 
           {defaultAction && (
-            <Button className="size-fit flex items-center gap-1.5 bg-[#0F1729] rounded-[8px] py-1.75 px-3.5 hover:bg-[#0F1729]/95">
+            <Button
+              onClick={defaultAction.action}
+              className="size-fit flex items-center gap-1.5 bg-[#0F1729] rounded-[8px] py-1.75 px-3.5 hover:bg-[#0F1729]/95"
+            >
               <defaultAction.icon className="size-4 stroke-white" />
               <span className="text-sm font-medium text-white">
                 {defaultAction.label}

@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
@@ -7,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 export default function SignInPage() {
+  const navigate = useNavigate();
+
   const form = useForm({
     resolver: zodResolver(SIGN_IN_SCHEMA),
     defaultValues: {},
@@ -14,6 +17,7 @@ export default function SignInPage() {
 
   function onSubmit(data: z.infer<typeof SIGN_IN_SCHEMA>) {
     console.log(data);
+    navigate("/point=of-sale", { replace: true });
   }
 
   return (

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { PlusIcon } from "lucide-react";
 
 import {
@@ -6,6 +7,7 @@ import {
 } from "@/components/re-useable/base-table";
 
 import { DashboardWrapper } from "../shared/dashboard-wrapper";
+import { AddUserDialog } from "./component/add-user-dialog";
 import {
   ActionColumn,
   NameColumn,
@@ -14,6 +16,8 @@ import {
 } from "./component/table-columns";
 
 export default function UsersPage() {
+  const [openUserDialog, setOpenUserDialog] = useState(false);
+
   return (
     <DashboardWrapper
       page="Users"
@@ -22,7 +26,7 @@ export default function UsersPage() {
         icon: PlusIcon,
         label: "Add User",
         action: () => {
-          console.log("Add User clicked");
+          setOpenUserDialog(true);
         },
       }}
     >
@@ -57,6 +61,8 @@ export default function UsersPage() {
             </div>
           ))}
         </div>
+
+        <AddUserDialog open={openUserDialog} setOpen={setOpenUserDialog} />
       </>
     </DashboardWrapper>
   );
