@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Ellipsis, Key } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Switch } from "@/components/ui/switch";
 import { TableCell } from "@/components/ui/table";
 import { getInitials } from "@/utils/string-utils";
@@ -68,7 +74,14 @@ export function ActionColumn({ id }: { id: string }) {
         </p>
       </div>
 
-      <Ellipsis color="#5B6474" />
+      <Popover>
+        <PopoverTrigger render={<Button variant="ghost" />}>
+          <Ellipsis color="#5B6474" />
+        </PopoverTrigger>
+        <PopoverContent>
+          <Button>Delete user</Button>
+        </PopoverContent>
+      </Popover>
     </TableCell>
   );
 }

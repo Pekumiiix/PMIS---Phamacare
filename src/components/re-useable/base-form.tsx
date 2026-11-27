@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import {
   Controller,
   type ControllerRenderProps,
+  type FieldErrors,
   type FieldValues,
   type Path,
   type UseFormReturn,
@@ -26,12 +27,19 @@ export function FormBase<T extends FieldValues>({
   description,
   onSubmit,
 }: FormBaseProps<T>) {
+  function onError(errors: FieldErrors<T>) {
+    console.log("Form validation failed!");
+    console.log("Validation errors:", errors);
+  }
+
   return (
-    <FieldSet onSubmit={form.handleSubmit(onSubmit)} className={className}>
-      {legend && <FieldLegend>{legend}</FieldLegend>}
-      {description && <FieldDescription>{description}</FieldDescription>}
-      {children}
-    </FieldSet>
+    <form onSubmit={form.handleSubmit(onSubmit, onError)}>
+      <FieldSet className={className}>
+        {legend && <FieldLegend>{legend}</FieldLegend>}
+        {description && <FieldDescription>{description}</FieldDescription>}
+        {children}
+      </FieldSet>
+    </form>
   );
 }
 

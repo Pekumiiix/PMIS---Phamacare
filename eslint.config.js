@@ -127,7 +127,10 @@ export default tseslint.config(
 
   {
     name: "app/ui-components-overrides",
-    files: ["src/components/ui/**/*.{ts,tsx,js,jsx}"],
+    files: [
+      "src/components/ui/**/*.{ts,tsx,js,jsx}",
+      "src/components/re-useable/base-form.tsx",
+    ],
     rules: {
       "no-restricted-syntax": "off",
       "no-restricted-imports": "off",

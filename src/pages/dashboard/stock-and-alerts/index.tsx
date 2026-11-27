@@ -1,12 +1,18 @@
+import { useState } from "react";
 import { CircleOff, Plus, Truck } from "lucide-react";
 
 import { DashboardWrapper } from "../shared/dashboard-wrapper";
+import { AddStockBatchDialog } from "./components/add-stock-batch-dialog";
 import { AlertContainer } from "./components/alert-container";
 import { ExpiredItems } from "./components/expired-items";
 import { LowStockItem } from "./components/low-stock-item";
 import { NearExpiryItem } from "./components/near-expiry-item";
+import { OrderNewDrugsDialog } from "./components/order-new-drug-dialog";
 
 export default function StockAndAlertsPage() {
+  const [openStockBatchDialog, setOpenStockBatchDialog] = useState(false);
+  const [openOrderNewDrugDialog, setOpenOrderNewDrugDialog] = useState(false);
+
   return (
     <DashboardWrapper
       page="Stock & alerts"
@@ -14,12 +20,12 @@ export default function StockAndAlertsPage() {
       outlineAction={{
         icon: Truck,
         label: "Order new drugs",
-        action: () => console.log("Button clicked"),
+        action: () => setOpenOrderNewDrugDialog(true),
       }}
       defaultAction={{
         icon: Plus,
         label: "Add stock batch",
-        action: () => console.log("Button clicked"),
+        action: () => setOpenStockBatchDialog(true),
       }}
     >
       <>
@@ -65,6 +71,16 @@ export default function StockAndAlertsPage() {
             </div>
           </AlertContainer>
         </div>
+
+        <AddStockBatchDialog
+          open={openStockBatchDialog}
+          setOpen={setOpenStockBatchDialog}
+        />
+
+        <OrderNewDrugsDialog
+          open={openOrderNewDrugDialog}
+          setOpen={setOpenOrderNewDrugDialog}
+        />
       </>
     </DashboardWrapper>
   );
