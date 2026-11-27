@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Ellipsis, Key } from "lucide-react";
+import { Ellipsis, Key, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +10,8 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { TableCell } from "@/components/ui/table";
 import { getInitials } from "@/utils/string-utils";
+
+import { ResetPasswordDialog } from "./reset-password-dialog";
 
 export function NameColumn({ name }: { name: string }) {
   return (
@@ -62,27 +64,41 @@ export function StatusColumn({ status }: { status: "active" | "inactive" }) {
 }
 
 export function ActionColumn({ id }: { id: string }) {
+  const [open, setOpen] = useState<boolean>(false);
   return (
-    <TableCell className="h-full flex justify-end gap-3">
-      <div
-        onClick={() => console.log(`Action for user ${id}`)}
-        className="flex items-center gap-1.5"
-      >
-        <Key size={14} strokeWidth={2} color="#5B6474" />
-        <p className="text-xs leading-4 font-medium text-[#5B6474]">
-          Reset Password
-        </p>
-      </div>
+    <>
+      <TableCell className="h-full flex justify-end gap-3">
+        <div
+          onClick={() => {
+            setOpen(true);
+            console.log(id);
+          }}
+          className="flex items-center gap-1.5"
+        >
+          <Key size={14} strokeWidth={2} color="#5B6474" />
+          <p className="text-xs leading-4 font-medium text-[#5B6474]">
+            Reset Password
+          </p>
+        </div>
 
-      <Popover>
-        <PopoverTrigger render={<Button variant="ghost" />}>
-          <Ellipsis color="#5B6474" />
-        </PopoverTrigger>
-        <PopoverContent>
-          <Button>Delete user</Button>
-        </PopoverContent>
-      </Popover>
-    </TableCell>
+        <Popover>
+          <PopoverTrigger render={<Button variant="ghost" />}>
+            <Ellipsis color="#5B6474" />
+          </PopoverTrigger>
+          <PopoverContent className="w-fit p-0">
+            <Button
+              variant="ghost"
+              className="w-fit justify-start gap-2 text-[#B42318] hover:bg-[#FDECEA] hover:text-[#B42318]"
+            >
+              <Trash2 size={16} />
+              Delete user
+            </Button>
+          </PopoverContent>
+        </Popover>
+      </TableCell>
+
+      <ResetPasswordDialog open={open} setOpen={setOpen} />
+    </>
   );
 }
 
